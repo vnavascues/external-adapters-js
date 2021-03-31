@@ -6,6 +6,7 @@ export const NAME = 'price'
 
 const customError = (data: any) => {
   if (data['Error Message']) return true
+  if (data['Note']) return true
   return false
 }
 
