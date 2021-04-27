@@ -17,7 +17,7 @@ export const execute: Execute = async (input) => {
   const jobRunID = validator.validated.id
   const endpoint = validator.validated.data.endpoint || ''
   let url = `https://api.finage.co.uk/last/${endpoint}`
-  const symbol = validator.overrideSymbol(NAME).toUpperCase()
+  const symbol = (validator.overrideSymbol(NAME) as string).toUpperCase()
   const to = (validator.validated.data.to || '').toUpperCase()
   const currencies = symbol + to
   const apikey = util.getRandomRequiredEnv('API_KEY')
