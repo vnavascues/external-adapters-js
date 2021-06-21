@@ -6,4 +6,8 @@ export const NAME = 'PAXOS'
 export const DEFAULT_ENDPOINT = 'assetAttestation'
 export const DEFAULT_BASE_URL = 'https://api.paxos.com/v1/'
 
-export const makeConfig = (prefix?: string): Config => Requester.getDefaultConfig(prefix)
+export const makeConfig = (prefix?: string): Config => {
+    const config = Requester.getDefaultConfig(prefix)
+    config.DEFAULT_ENDPOINT = DEFAULT_ENDPOINT
+    return config
+}
