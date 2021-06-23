@@ -1,21 +1,17 @@
 import { Requester, Validator } from '@chainlink/ea-bootstrap'
-import { Config, ExecuteWithConfig } from '@chainlink/types'
+import { Config, AdapterRequest } from '@chainlink/types'
 import { DEFAULT_BASE_URL } from '../config'
 
 export const supportedEndpoints = ['assetAttestation']
 
 const customError = (data: any) => data.Response === 'Error'
 
-type RequestData = {
-  asset: string
-}
-
 export const inputParams = {
   asset: true,
 }
 
 type Attestation = {
-  asset: string
+   asset: string
   auditorName: string
   lastAttestedAt: string
   amount: number
@@ -38,13 +34,13 @@ const toAttestation = async (config: Config, asset: string): Promise<Attestation
   }
 }
 
-export const execute: ExecuteWithConfig<Config> = async (request, config) => {
+export const execute = async (request: AdapterRequest, config: Config): Promise<Attestation> => {
   const validator = new Validator(request, inputParams)
   if (validator.error) throw validator.error
-
   const asset = validator.validated.data.asset
 
   if (!asset) throw Error('asset must be provided')
 
-  return await toAttestation(config, asset)
+  const response = await toAttestation(config, asset)
+  return response
 }
