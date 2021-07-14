@@ -261,6 +261,9 @@
       "path": "./sources/openexchangerates"
     },
     {
+      "path": "./sources/openweathermap"
+    },
+    {
       "path": "./sources/orchid-bandwidth"
     },
     {

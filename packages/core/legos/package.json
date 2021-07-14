@@ -92,6 +92,7 @@
     "@chainlink/oilpriceapi-adapter": "*",
     "@chainlink/onchain-adapter": "*",
     "@chainlink/openexchangerates-adapter": "*",
+    "@chainlink/openweathermap-adapter": "*",
     "@chainlink/orchid-bandwidth-adapter": "*",
     "@chainlink/paxos-adapter": "*",
     "@chainlink/paypal-adapter": "*",

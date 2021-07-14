@@ -375,6 +375,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/sources/openexchangerates"
       },
       {
+        "name": "@chainlink/openweathermap-adapter",
+        "reference": "workspace:packages/sources/openweathermap"
+      },
+      {
         "name": "@chainlink/orchid-bandwidth-adapter",
         "reference": "workspace:packages/sources/orchid-bandwidth"
       },
@@ -567,6 +571,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@chainlink/oilpriceapi-adapter", ["workspace:packages/sources/oilpriceapi"]],
       ["@chainlink/onchain-adapter", ["workspace:packages/sources/onchain"]],
       ["@chainlink/openexchangerates-adapter", ["workspace:packages/sources/openexchangerates"]],
+      ["@chainlink/openweathermap-adapter", ["workspace:packages/sources/openweathermap"]],
       ["@chainlink/orchid-bandwidth-adapter", ["workspace:packages/sources/orchid-bandwidth"]],
       ["@chainlink/outlier-detection-adapter", ["workspace:packages/composites/outlier-detection"]],
       ["@chainlink/paxos-adapter", ["workspace:packages/sources/paxos"]],
@@ -5206,6 +5211,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@chainlink/oilpriceapi-adapter", "workspace:packages/sources/oilpriceapi"],
             ["@chainlink/onchain-adapter", "workspace:packages/sources/onchain"],
             ["@chainlink/openexchangerates-adapter", "workspace:packages/sources/openexchangerates"],
+            ["@chainlink/openweathermap-adapter", "workspace:packages/sources/openweathermap"],
             ["@chainlink/orchid-bandwidth-adapter", "workspace:packages/sources/orchid-bandwidth"],
             ["@chainlink/paxos-adapter", "workspace:packages/sources/paxos"],
             ["@chainlink/paypal-adapter", "workspace:packages/sources/paypal"],
@@ -5925,6 +5931,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/sources/openexchangerates/",
           "packageDependencies": [
             ["@chainlink/openexchangerates-adapter", "workspace:packages/sources/openexchangerates"],
+            ["@chainlink/ea-bootstrap", "workspace:packages/core/bootstrap"],
+            ["@chainlink/ea-test-helpers", "workspace:packages/core/test-helpers"],
+            ["@chainlink/types", "workspace:packages/core/types/@chainlink"],
+            ["@types/jest", "npm:26.0.22"],
+            ["@types/node", "npm:14.14.41"],
+            ["tslib", "npm:2.2.0"],
+            ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=ddfc1b"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@chainlink/openweathermap-adapter", [
+        ["workspace:packages/sources/openweathermap", {
+          "packageLocation": "./packages/sources/openweathermap/",
+          "packageDependencies": [
+            ["@chainlink/openweathermap-adapter", "workspace:packages/sources/openweathermap"],
             ["@chainlink/ea-bootstrap", "workspace:packages/core/bootstrap"],
             ["@chainlink/ea-test-helpers", "workspace:packages/core/test-helpers"],
             ["@chainlink/types", "workspace:packages/core/types/@chainlink"],

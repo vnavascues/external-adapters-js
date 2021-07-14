@@ -60,6 +60,7 @@ import * as nomics from '@chainlink/nomics-adapter'
 import * as oilpriceapi from '@chainlink/oilpriceapi-adapter'
 import * as onchain from '@chainlink/onchain-adapter'
 import * as openexchangerates from '@chainlink/openexchangerates-adapter'
+import * as openweathermap from '@chainlink/openweathermap-adapter'
 import * as orchid_adapter from '@chainlink/orchid-bandwidth-adapter'
 import * as paxos from '@chainlink/paxos-adapter'
 import * as paypal from '@chainlink/paypal-adapter'
@@ -145,6 +146,7 @@ export default {
   oilpriceapi,
   onchain,
   openexchangerates,
+  openweathermap,
   orchid_adapter,
   paxos,
   paypal,
