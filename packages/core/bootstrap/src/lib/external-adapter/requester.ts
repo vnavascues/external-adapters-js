@@ -44,13 +44,20 @@ export class Requester {
       try {
         response = await axios(config)
       } catch (error) {
+        let message: string
+        if (error.response) {
+          message =
+            `Request failed with status code ${error.response.status}. ` +
+            `Response data: ${JSON.stringify(error.response.data)}`
+        } else {
+          message = JSON.stringify(error.message)
+        }
         // Request error
         if (n === 1) {
-          logger.error(`Could not reach endpoint: ${JSON.stringify(error.message)}`)
-          throw new AdapterError({ message: error.message, cause: error })
+          logger.error(`Could not reach endpoint: ${message}`)
+          throw new AdapterError({ message, cause: error })
         }
-
-        return await _delayRetry(`Caught error. Retrying: ${JSON.stringify(error.message)}`)
+        return await _delayRetry(`Caught error. Retrying: ${message}`)
       }
 
       if (response.data.error || customError(response.data)) {
