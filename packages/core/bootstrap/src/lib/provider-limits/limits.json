@@ -758,6 +758,33 @@
     },
     "ws": {}
   },
+  "openweathermap": {
+    "http": {
+      "free": {
+        "rateLimit1m": 60,
+        "rateLimit1mo": 1000000,
+        "note": "One Call API is limited to 1000 req/d"
+      },
+      "startup": {
+        "rateLimit1m": 600,
+        "rateLimit1mo": 10000000,
+        "note": "One Call API is limited to 2000 req/d"
+      },
+      "developer": {
+        "rateLimit1m": 3000,
+        "rateLimit1mo": 100000000
+      },
+      "professional": {
+        "rateLimit1m": 30000,
+        "rateLimit1mo": 1000000000
+      },
+      "enterprise": {
+        "rateLimit1m": 200000,
+        "rateLimit1mo": 5000000000
+      }
+    },
+    "ws": {}
+  },
   "orchid-bandwidth": {
     "http": {},
     "ws": {}
